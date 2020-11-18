@@ -1,0 +1,47 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "MACHO-MOD": {
+      "projectType": "library",
+      "root": "projects/macho-mod",
+      "sourceRoot": "projects/macho-mod/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/macho-mod/tsconfig.lib.json",
+            "project": "projects/macho-mod/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/macho-mod/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/macho-mod/src/test.ts",
+            "tsConfig": "projects/macho-mod/tsconfig.spec.json",
+            "karmaConfig": "projects/macho-mod/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/macho-mod/tsconfig.lib.json",
+              "projects/macho-mod/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "MACHO-MOD"
+}
