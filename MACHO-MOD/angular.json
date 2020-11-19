@@ -11,6 +11,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
+          "assets": ["./assets/ohYeah.mp3"],
           "options": {
             "tsConfig": "projects/macho-mod/tsconfig.lib.json",
             "project": "projects/macho-mod/ng-package.json"
